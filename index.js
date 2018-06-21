@@ -1,12 +1,24 @@
-var express = require("express");
-var app= express();
-var port = process.env.PORT || 2000;
-
-app.get("/" ,function(req , res){
-	res.send("welcome to F MyD Demo!");
+const ScriptServer = require('scriptserver');
+ 
+const server = new ScriptServer({
+  core: {
+    jar: 'spigot.jar',
+    args: ['-Xmx2G'],
+    rcon: {
+      port: '25575',
+      password: 'password'
+    }
+  }
 });
 
-app.get('/tst' , (req, res) => res.send("tst Page"))
+
+const ssEssentials = require('scriptserver-essentials');
+server.use(ssEssentials);
 
 
-app.listen(port);
+ server.on('console', line => {
+      server.send(`say ${line}`)
+
+});
+
+server.start();
