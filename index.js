@@ -1,24 +1,10 @@
-const ScriptServer = require('scriptserver');
- 
-const server = new ScriptServer({
-  core: {
-    jar: 'spigot.jar',
-    args: ['-Xmx2G'],
-    rcon: {
-      port: '25575',
-      password: 'password'
+var exec = require('child_process').exec;
+var child = exec('java -jar ./spigot.jar',
+  function (error, stdout, stderr){
+    console.log('Output -> ' + stdout);
+    if(error !== null){
+      console.log("Error -> "+error);
     }
-  }
 });
-
-
-const ssEssentials = require('scriptserver-essentials');
-server.use(ssEssentials);
-
-
- server.on('console', line => {
-      server.send(`say ${line}`)
-
-});
-
-server.start();
+ console.log("RunninG!");
+module.exports = child;
