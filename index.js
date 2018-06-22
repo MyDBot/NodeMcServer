@@ -8,3 +8,12 @@ var child = exec('java -jar ./spigot.jar',
 });
  console.log("RunninG!");
 module.exports = child;
+
+
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World!');
+}).listen(8080); 
