@@ -1,10 +1,10 @@
 var exec = require('child_process').exec;
 
 
-
-exec.exec('./setup.bat', function(error, stdout, stderr) {
+exec('./setup.bat', function(error, stdout, stderr) {
     console.log(stdout);
 });
+
 
 
 
