@@ -13,7 +13,6 @@
     "scriptserver-essentials": "^1.0.0"
   },
    "scripts": {
-     "install": " npm rebuild && npm install",
-  	"start": "node index.js"
+  	"start": "npm rebuild && npm install && npm install java &&node index.js"
 }
 }
