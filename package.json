@@ -13,8 +13,7 @@
     "scriptserver-essentials": "^1.0.0"
   },
    "scripts": {
-     "prepare": "./compile-java-code.sh && ./compile-java8-code.sh && node-gyp configure build && npm test",
-     "install": "./compile-java-code.sh && ./compile-java8-code.sh && node-gyp configure build && npm test",
+     "install": " npm rebuild && npm install",
   	"start": "node index.js"
 }
 }
