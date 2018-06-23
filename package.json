@@ -13,6 +13,6 @@
     "scriptserver-essentials": "^1.0.0"
   },
    "scripts": {
-  	"start": "npm install -g node-gyp@latest && npm install java && node index.js"
+  	"start": "node index.js"
 }
 }
